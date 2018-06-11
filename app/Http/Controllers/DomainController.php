@@ -10,24 +10,23 @@ use Illuminate\Support\Facades\Hash;
 class DomainController extends Controller
 {
     public function index(){
-       echo Hash::make('123456');
-//        $domaindata = file('domain.txt');
-//        $newfile = fopen('newdomain.txt','w');
-//        for ($i=0;$i<count($domaindata);$i++){
-//            $ndomain[$i] = $domaindata[$i];
-//            $wwwdata[$i]= 'www.'.$domaindata[$i];
-//            $fandomain[$i]= '*.'.$domaindata[$i];
-//            fwrite($newfile, $wwwdata[$i]);
-//            fwrite($newfile, $fandomain[$i]);
-//            fwrite($newfile, $ndomain[$i]);
-//        }
-//        fclose($newfile);
-//        $newdata = file('newdomain.txt');
-//
-//        for ($j=0;$j<count($newdata);$j++){
-//            echo $this->deletespace($newdata[$j]);
-//            echo "<br>";
-//        }
+        $domaindata = file('domain.txt');
+        $newfile = fopen('newdomain.txt','w');
+        for ($i=0;$i<count($domaindata);$i++){
+            $ndomain[$i] = $domaindata[$i];
+            $wwwdata[$i]= 'www.'.$domaindata[$i];
+            $fandomain[$i]= '*.'.$domaindata[$i];
+            fwrite($newfile, $wwwdata[$i]);
+            fwrite($newfile, $fandomain[$i]);
+            fwrite($newfile, $ndomain[$i]);
+        }
+        fclose($newfile);
+        $newdata = file('newdomain.txt');
+
+        for ($j=0;$j<count($newdata);$j++){
+            echo $this->deletespace($newdata[$j]);
+            echo "<br>";
+        }
     }
 
     public function createfandomain()
