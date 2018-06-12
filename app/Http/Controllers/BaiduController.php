@@ -12,15 +12,14 @@ class BaiduController extends Controller
 
     public function pushtoken()
     {
-//      phpinfo();
-        $token = 'mlkC9Yzjf8o2KEBf'; //我的token
-        $yuming = Yuming::all();
+        $token = 'JNhSyUDGYC4ak7xW'; //我的token
+        $yuming = Yuming::where(['team'=>2])->get();
         $pre = Pre::all();
         $nav = Nav::all();
         foreach ($yuming as $key=>$item){
 //            foreach ($pre as $key1=>$item1){
                 foreach ($nav as $key2=>$item2){
-                    for($i=0;$i<100;$i++){
+                    for($i=0;$i<2000;$i++){
                         $url[$key][$key2][$i]='http://www.'.$item->name.'/'.$item2->name.'/'.date('Ymd').rand(1000,9999).'.html';
                     }
                     $posturl = 'http://data.zz.baidu.com/urls?site=www.'.$item->name.'&token='.$token;

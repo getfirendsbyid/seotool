@@ -28,3 +28,4 @@ Route::get('/addpres', 'DomainController@addpres');
 Route::get('/addurl', 'DomainController@addurl');
 Route::get('/pushtoken', 'BaiduController@pushtoken');
 
+Route::get('/mulu', 'DomainController@createmuluurl');

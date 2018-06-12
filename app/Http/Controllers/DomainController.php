@@ -99,8 +99,8 @@ class DomainController extends Controller
 
         for ($i=0;$i<count($domaindata);$i++){
             $data[$i]['name'] = $this->deletespace($domaindata[$i]);
-            $data[$i]['team'] = 1;
-            $data[$i]['status'] = 0;
+            $data[$i]['team'] = 2;
+            $data[$i]['status'] = 1;
             $data[$i]['created_at'] = date('Y-m-d h:i:s');
             $data[$i]['updated_at'] = date('Y-m-d h:i:s');
         }
@@ -122,7 +122,15 @@ class DomainController extends Controller
         dd($bool);
     }
 
-
-    
+    public function createmuluurl()
+    {
+        $pre = file('pre.txt');
+        for ($i=0;$i<count($pre);$i++){
+        for ($k=0;$k<5;$k++){
+          echo  $data[$i] = $this->deletespace($pre[$i]).date('Ymd').'/'.rand(100,999).'.html';
+          echo '<br>';
+        }
+        }
+    }
 
 }
