@@ -129,7 +129,7 @@ class DomainController extends Controller
         for ($k=0;$k<5;$k++){
           echo  $data[$i] = $this->deletespace($pre[$i]).date('Ymd').'/'.rand(100,999).'.html';
           echo '<br>';
-        }
+            }
         }
     }
 

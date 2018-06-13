@@ -162,6 +162,8 @@ return [
 
         App\Providers\RouteServiceProvider::class,
         Laravel\Dusk\DuskServiceProvider::class,
+
+        \Jourdon\Slug\SlugServiceProvider::class,
     ],
 
     /*
@@ -211,6 +213,7 @@ return [
         'Validator' => Illuminate\Support\Facades\Validator::class,
         'View' => Illuminate\Support\Facades\View::class,
 
+        'Slug'  => \Jourdon\Slug\Slug::class,
     ],
 
 ];

@@ -1,4 +1,4 @@
-@extends('layouts.app')
+@extends('layouts.admin')
 
 @section('content')
 <div class="container">
@@ -6,14 +6,13 @@
         <div class="col-md-8">
             <div class="card">
                 <div class="card-header">Dashboard</div>
-
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success">
+                    <div class="card-body">
+                        @if (session('status'))
+                            <div class="alert alert-success">
+                            123
                             {{ session('status') }}
-                        </div>
-                    @endif
-
+                            </div>
+                        @endif
                     You are logged in!
                 </div>
             </div>

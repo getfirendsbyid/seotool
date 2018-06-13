@@ -19,7 +19,7 @@ class BaiduController extends Controller
         foreach ($yuming as $key=>$item){
 //            foreach ($pre as $key1=>$item1){
                 foreach ($nav as $key2=>$item2){
-                    for($i=0;$i<2000;$i++){
+                    for($i=0;$i<2;$i++){
                         $url[$key][$key2][$i]='http://www.'.$item->name.'/'.$item2->name.'/'.date('Ymd').rand(1000,9999).'.html';
                     }
                     $posturl = 'http://data.zz.baidu.com/urls?site=www.'.$item->name.'&token='.$token;
@@ -40,11 +40,12 @@ class BaiduController extends Controller
                     }
                     echo '<br>';
                     echo '返回结果:'.$result;
+                    echo '<br>';
                     ob_flush();
                     flush();
                 }
-            echo '<br>'.'休息五分钟接着推送';
-            sleep(300);
+            echo '<br>'.'休息半小时接着推送';
+//            sleep(1800);
 //            }
 
         }
@@ -89,11 +90,9 @@ class BaiduController extends Controller
             $protocol = '';
             if ($_SERVER['SERVER_PROTOCOL'] === 'HTTP/1.1') {
                 $protocol = 'http://';
-
             } else if ($_SERVER['SERVER_PROTOCOL'] === 'HTTP/2.0') {
                 $protocol = 'https://';
             }
-
             if (stripos($protocol, 'https://') !== FALSE || stripos($protocol, 'http://') !== FALSE) {
                 $host = $protocol . $_SERVER['HTTP_HOST'];
                 $url = $host . $requestUri;
