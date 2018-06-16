@@ -13,14 +13,14 @@ class BaiduController extends Controller
     public function pushtoken()
     {
         $token = 'JNhSyUDGYC4ak7xW'; //我的token
-        $yuming = Yuming::where(['team'=>2])->get();
+        $yuming = Yuming::where(['team'=>4])->get();
         $pre = Pre::all();
         $nav = Nav::all();
         foreach ($yuming as $key=>$item){
 //            foreach ($pre as $key1=>$item1){
                 foreach ($nav as $key2=>$item2){
-                    for($i=0;$i<2;$i++){
-                        $url[$key][$key2][$i]='http://www.'.$item->name.'/'.$item2->name.'/'.date('Ymd').rand(1000,9999).'.html';
+                    for($i=0;$i<200;$i++){
+                        $url[$key][$key2][$i]='http://www.'.$item->name.'/'.$item2->name.'/z'.date('Ymd').rand(1000,9999).'.html';
                     }
                     $posturl = 'http://data.zz.baidu.com/urls?site=www.'.$item->name.'&token='.$token;
                     $ch = curl_init();
@@ -33,11 +33,11 @@ class BaiduController extends Controller
                     );
                     curl_setopt_array($ch, $options);
                     $result = curl_exec($ch);
-                    echo '当前第'.($key+1).'条域名。当前前缀www。域名:'.$item->name.'站点生成的'.count($url[$key][$key2]).'条url正在推送';
-                    for ($i=0;$i<count($url[$key][$key2]);$i++){
-                        echo $url[$key][$key2][$i];
-                        echo '<br>';
-                    }
+                    echo '当前第'.($key+1).'条域名。前缀www。域名'.$item->name.'.栏目:'.$item2->name.'.'.count($url[$key][$key2]).'条url正在推送';
+//                    for ($i=0;$i<count($url[$key][$key2]);$i++){
+//                        echo $url[$key][$key2][$i];
+//                        echo '<br>';
+//                    }
                     echo '<br>';
                     echo '返回结果:'.$result;
                     echo '<br>';
@@ -46,7 +46,6 @@ class BaiduController extends Controller
                 }
             echo '<br>'.'休息半小时接着推送';
 //            sleep(1800);
-//            }
 
         }
         dd('推送结束.欢迎使用George牌推送工具');
