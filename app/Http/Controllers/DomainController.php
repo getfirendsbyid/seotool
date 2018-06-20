@@ -2,14 +2,82 @@
 
 namespace App\Http\Controllers;
 
+use App\Group;
 use App\Pre;
 use App\Yuming;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 
 class DomainController extends Controller
 {
-    public function index(){
+
+    public function index()
+    {
+        $userid = Auth::user()->id;
+        $group = Group::where(['userid'=>$userid])->get();
+        return view('yuming.index',compact('group'));
+    }
+
+    public function list(Request $request)
+    {
+        $teamid = $request->input('teamid');
+        $teamyuming = Yuming::where(['team'=>$teamid])->get();
+        return view('yuming.list',compact('teamyuming','teamid'));
+    }
+
+    public function add(Request $request)
+    {
+        $teamid = $request->input('teamid');
+        $teamyuming = Yuming::where(['team'=>$teamid])->get();
+        return view('yuming.add',compact('teamyuming','teamid'));
+    }
+
+    public function doadd(Request $request)
+    {
+        $yuming =$request->input('yuming');
+        $teamid =$request->input('teamid');
+        $yuming = explode("\r\n", $yuming);
+        foreach($yuming as $key=>$item){
+            $where[$key]['name'] = $item;
+            $where[$key]['team'] = $teamid;
+            $where[$key]['created_at'] = date('Y-m-d h:i:s');
+            $where[$key]['updated_at'] = date('Y-m-d h:i:s');
+        }
+        if (!empty($teamid)){
+            $deletebool =  Yuming::where(['team'=>$teamid])->delete();
+            $insertbool =  Yuming::insert($where);
+            if ($insertbool){
+               echo '域名保存成功，请自行关掉';
+            }
+        }
+    }
+
+    public function update()
+    {
+        return view('yuming.update');
+    }
+
+    public function addteam()
+    {
+        return view('yuming.addteam');
+    }
+
+    public function doaddteam(Request $request)
+    {
+        $name =$request->input('name');
+        $token =$request->input('token');
+        $userid = Auth::user()->id;
+        $data = ['name'=>$name,'token'=>$token,'created_at'=>date('Y-m-d'),'updated_at'=>date('Y-m-d'),'userid'=>$userid];
+        $bool = Group::insert($data);
+        if ($bool){
+            return response()->json(['status'=>200,'msg'=>'新增成功']);
+        }else{
+            return response()->json(['status'=>500,'msg'=>'新增失败']);
+        }
+    }
+
+    public function index1(){
         $domaindata = file('domain.txt');
         $newfile = fopen('newdomain.txt','w');
         for ($i=0;$i<count($domaindata);$i++){
