@@ -18,6 +18,9 @@ Route::get('/', function () {
 });
 
 //外链工具
+Route::get('/admin','LinkController@index');
+
+//外链工具
 Route::get('/linktool','LinkController@index');
 
 //百度tool
@@ -26,7 +29,14 @@ Route::get('baidu/pushtoken', 'BaiduController@pushtoken');
 //神马tool
 
 //域名tool
-Route::get('/yuming','DomainController@index');
+Route::get('yuming','DomainController@index');
+Route::get('yuming/list','DomainController@list');
+Route::get('yuming/add','DomainController@add');
+Route::post('yuming/doadd','DomainController@doadd');
+Route::get('yuming/update','DomainController@update');
+Route::get('yuming/addteam','DomainController@addteam');
+Route::post('yuming/doaddteam','DomainController@doaddteam');
+
 Route::get('/domain','DomainController@index');
 Route::get('/fanyuming','DomainController@createfandomain');
 Route::get('/www','DomainController@createwww');
@@ -41,3 +51,6 @@ Route::get('/mulu', 'DomainController@createmuluurl');
 Route::get('/mulu1', 'DomainController@muluurl');
 Route::get('/fy', 'FyController@index');
 Route::get('/bijiao', 'DomainController@bijiao');
+
+Route::get('baoxian', 'DomainController@baoxianurl');
+
