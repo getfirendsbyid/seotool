@@ -25,8 +25,17 @@ Route::get('/linktool','LinkController@index');
 
 //百度tool
 Route::get('baidu/pushtoken', 'BaiduController@pushtoken');
-
+Route::get('baidu/sitemap', 'BaiduController@pushtoken');
+Route::get('baidu/yuming', 'BaiduController@pushtoken');
+Route::get('baidu/ping', 'BaiduController@ping');
 //神马tool
+
+
+//系统生成
+Route::get('sc/ptej', 'LinkController@index');
+Route::get('sc/pyej', 'LinkController@index');
+Route::get('sc/ptzml', 'LinkController@index');
+Route::get('sc/pyzml', 'LinkController@index');
 
 //域名tool
 Route::get('yuming','DomainController@index');
