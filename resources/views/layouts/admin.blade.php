@@ -52,6 +52,14 @@
     <div id="side-nav">
         <ul id="nav">
             <li>
+                <a _href="/admin">
+                    <i class="iconfont">&#xe6bs;</i>
+                    <cite>系统工具</cite>
+                </a>
+            </li>
+
+            </li>
+            <li>
                 <a href="javascript:;">
                     <i class="iconfont">&#xe6b8;</i>
                     <cite>外链工具</cite>
@@ -112,9 +120,9 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="order-list.html">
+                        <a _href="/baidu/pushtoken">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>订单列表</cite>
+                            <cite>token推送</cite>
                         </a>
                     </li >
                 </ul>
@@ -222,7 +230,7 @@
         </ul>
         <div class="layui-tab-content">
             <div class="layui-tab-item layui-show">
-                <iframe src='./welcome.html' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
+                <iframe src='/admin/index' frameborder="0" scrolling="yes" class="x-iframe"></iframe>
             </div>
         </div>
     </div>

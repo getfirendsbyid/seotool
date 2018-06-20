@@ -33,14 +33,15 @@ class DomainController extends Controller
     {
         $domaindata = file('domain.txt');
         $newfile = fopen('fanyuming.txt','w');
-
+        $pres = Pre::all();
         for ($i=0;$i<count($domaindata);$i++){
-            $randworld = str_random(4);
-            $ndomain[$i] = $randworld.'.'.$domaindata[$i];
-            echo $ndomain[$i];
-            fwrite($newfile, $ndomain[$i]."\r\n");
+            for ($j=0; $j<$pres->count() ;$j++){
+                $ndomain[$i] = $pres->toArray()[$j]['name'].'.'.$this->deletespace($domaindata[$i]).'/'.date('Ymd').rand(1000,9999).'.html';
+                echo $ndomain[$i];
+                echo '<br>';
+                fwrite($newfile, $ndomain[$i]."\r\n");
+            }
         }
-        return $domaindata;
     }
 
     public function createwww()
@@ -65,7 +66,7 @@ class DomainController extends Controller
             $no_rn[$i] = $this->deletespace($ndomain[$i]);
             echo $no_rn[$i];
             echo "<br>";
-            fwrite($newfile, $no_rn[$i]."\r"); 
+            fwrite($newfile, $no_rn[$i]."\r");
         }
     }
 
@@ -99,7 +100,7 @@ class DomainController extends Controller
 
         for ($i=0;$i<count($domaindata);$i++){
             $data[$i]['name'] = $this->deletespace($domaindata[$i]);
-            $data[$i]['team'] = 2;
+            $data[$i]['team'] = 3;
             $data[$i]['status'] = 1;
             $data[$i]['created_at'] = date('Y-m-d h:i:s');
             $data[$i]['updated_at'] = date('Y-m-d h:i:s');
@@ -127,10 +128,54 @@ class DomainController extends Controller
         $pre = file('pre.txt');
         for ($i=0;$i<count($pre);$i++){
         for ($k=0;$k<5;$k++){
-          echo  $data[$i] = $this->deletespace($pre[$i]).date('Ymd').'/'.rand(100,999).'.html';
+          echo  $data[$i] = $this->deletespace($pre[$i]).date('Ymd').'/'.rand(100,999);
           echo '<br>';
             }
         }
+    }
+
+    public function muluurl()
+    {
+
+        for ($i=0;$i<2000;$i++){
+            echo 'http://d.958shop.com/bbk'.str_random(5);
+            echo '<br>';
+        }
+    }
+
+    public function baoxianurl(){
+        $baoxian = file('domain.txt');
+        $pre = file('pre.txt');
+        for ($i=0; $i <count($baoxian) ; $i++) { 
+            # code...
+            for ($j=0; $j <count($pre) ; $j++) { 
+                # code...
+                for ($l=0; $l <20 ; $l++) { 
+                      $data[$i] = $this->deletespace($pre[$j]).'.'. $this->deletespace($baoxian[$i]).'/'.$this->deletespace($pre[$j]).'/'.date('Ymd').rand(1000,9999).'.html';
+                echo $data[$i];
+                echo "<br>";
+                }
+              
+            }
+        }
+    }
+
+    public function bijiao()
+    {
+        $haode = file('zz.txt');
+        $all = file('ss.txt');
+
+        for ($i=0;$i<count($all);$i++){
+            for ($j=0;$j<count($haode);$j++){
+                if ($all[$i] == $haode[$j]){
+                    $data[$i] = $all[$i];
+                }else{
+                    $z[$i] = $haode[$j];
+                }
+            }
+        }
+
+        dd($z);
     }
 
 }

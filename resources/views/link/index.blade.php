@@ -119,7 +119,6 @@
         layer.confirm('确认要停用吗？',function(index){
 
             if($(obj).attr('title')=='启用'){
-
                 //发异步把用户状态进行更改
                 $(obj).attr('title','停用')
                 $(obj).find('i').html('&#xe62f;');
@@ -134,7 +133,6 @@
                 $(obj).parents("tr").find(".td-status").find('span').removeClass('layui-btn-disabled').html('已启用');
                 layer.msg('已启用!',{icon: 5,time:1000});
             }
-
         });
     }
 
