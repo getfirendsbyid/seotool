@@ -164,6 +164,7 @@ return [
         Laravel\Dusk\DuskServiceProvider::class,
 
         \Jourdon\Slug\SlugServiceProvider::class,
+        Intervention\Image\ImageServiceProvider::class,
     ],
 
     /*
@@ -214,6 +215,7 @@ return [
         'View' => Illuminate\Support\Facades\View::class,
 
         'Slug'  => \Jourdon\Slug\Slug::class,
+        'Image' => Intervention\Image\Facades\Image::class,
     ],
 
 ];

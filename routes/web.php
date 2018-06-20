@@ -14,8 +14,14 @@
 Auth::routes();
 
 Route::get('/', function () {
-   return redirect('login');
+    phpinfo();
+//   return redirect('login');
 });
+
+//系统工具
+Route::get('/admin/index','HomeController@welcome');
+Route::get('test','BaiduController@test');
+
 
 //外链工具
 Route::get('/linktool','LinkController@index');
@@ -24,6 +30,9 @@ Route::get('/linktool','LinkController@index');
 Route::get('baidu/pushtoken', 'BaiduController@pushtoken');
 
 //神马tool
+
+//网站名生成工具
+Route::get('webname/create','ChineseController@create');
 
 //域名tool
 Route::get('/yuming','DomainController@index');

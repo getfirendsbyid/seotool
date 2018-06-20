@@ -52,8 +52,8 @@
     <div id="side-nav">
         <ul id="nav">
             <li>
-                <a _href="/admin">
-                    <i class="iconfont">&#xe6bs;</i>
+                <a _href="/admin/index">
+                    <i class="iconfont">&#59105;</i>
                     <cite>系统工具</cite>
                 </a>
             </li>

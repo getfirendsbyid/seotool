@@ -104,5 +104,22 @@ class BaiduController extends Controller
             }
         }
     }
+    public function deletespace($url)
+    {
+        return  str_replace(array("\r\n", "\r", "\n" ,"\t"), "", $url);
+    }
+
+    public function test()
+    {
+        $a =  file('domain.txt');
+       for ($i=0;$i<count($a);$i++){
+          $b =  Yuming::where(['name'=>$this->deletespace($a[$i])])->get();
+          $c = Yuming::find($b[0]['id']);
+          $c->token = 'mlkC9Yzjf8o2KEBf';
+          $c->save();
+       }
+       dd('租域名成功');
+        $a = Yuming::where(['team'=>4])->get()->toArray();
+    }
 
 }

@@ -34,7 +34,7 @@ require __DIR__.'/../vendor/autoload.php';
 | the responses back to the browser and delight our users.
 |
 */
-
+require __DIR__.'/../app/Common/MultiProcessBase.php';
 $app = require_once __DIR__.'/../bootstrap/app.php';
 
 /*

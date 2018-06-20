@@ -9,6 +9,8 @@
         "barryvdh/laravel-ide-helper": "^2.4",
         "fideloper/proxy": "^4.0",
         "guzzlehttp/guzzle": "^6.3",
+        "intervention/image": "^2.4",
+        "jackdou/laravel-swoole": "^1.0",
         "jourdon/slug": "^1.0",
         "laravel/framework": "5.6.*",
         "laravel/tinker": "^1.0",
