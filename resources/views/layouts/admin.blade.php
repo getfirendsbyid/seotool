@@ -53,7 +53,7 @@
         <ul id="nav">
             <li>
                 <a _href="/admin">
-                    <i class="iconfont">&#xe6b8;</i>
+                    <i class="iconfont">&#xe6ae;</i>
                     <cite>系统工具</cite>
                 </a>
             </li>
@@ -61,7 +61,7 @@
             </li>
             <li>
                 <a href="javascript:;">
-                    <i class="iconfont">&#xe6b8;</i>
+                    <i class="iconfont">&#xe6fc;</i>
                     <cite>域名管理</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
@@ -113,7 +113,7 @@
 
             <li>
                 <a href="javascript:;">
-                    <i class="iconfont">&#xe6b8;</i>
+                    <i class="iconfont">&#xe6f7;</i>
                     <cite>外链工具</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
@@ -177,11 +177,29 @@
                             <cite>token推送</cite>
                         </a>
                     </li >
+                    <li>
+                        <a _href="/baidu/ping">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>ping提交</cite>
+                        </a>
+                    </li >
+                    <li>
+                        <a _href="/baidu/sitemap">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>sitemap提交</cite>
+                        </a>
+                    </li >
+                    <li>
+                        <a _href="/baidu/yuming">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>域名提交</cite>
+                        </a>
+                    </li >
                 </ul>
             </li>
             <li>
                 <a href="javascript:;">
-                    <i class="iconfont">&#xe726;</i>
+                    <i class="iconfont">&#xe6e1;</i>
                     <cite>神马工具</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
@@ -268,6 +286,41 @@
                         </a>
                     </li>
                 </ul>
+
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont">&#xe70c;</i>
+                    <cite>系统生成</cite>
+                    <i class="iconfont nav_right">&#xe697;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a _href="/sc/ptej">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>普通二级域名</cite>
+                        </a>
+                    </li >
+                    <li>
+                        <a _href="/sc/pyej">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>拼音二级域名</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a _href="/sc/ptzml">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>普通子目录</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a _href="/sc/pyzml">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>拼音子目录</cite>
+                        </a>
+                    </li>
+                </ul>
+
             </li>
         </ul>
     </div>
