@@ -434,9 +434,27 @@ table th, table td {
 	/*padding-left: 10px;*/
 }
 .footer .copyright{
-	margin-left: 10px;
+	margin-left: 40px;
 }
-
+.footer>ul>li{
+	float: left;
+	left: 0px;
+	animation: gundong 3s infinite;
+}
+.footer>ul>li+li{
+	margin-left: 500px;
+}
+.footer>ul>li>a{
+	color: white;
+}
+@keyframes gundong {
+	0%{
+		left: 0;
+	}
+	100%{
+		left: 1000px;
+	}
+}
 
 @media screen and (max-width: 768px){
 	.fast-add{
@@ -466,4 +484,5 @@ table th, table td {
 		margin: 10px;
 	}
 }
+
 
