@@ -291,8 +291,9 @@
 <div class="footer">
     <ul class="copyright">
         <li><a href="#">欢迎使用winston,请投币500P一次,一次一小时</a></li>
-        <li><a href="#">欢迎使用winston,请投币500P一次,一次一小时</a></li>
-        <li><a href="#">欢迎使用winston,请投币500P一次,一次一小时</a></li>
+        <li><a href="#">欢迎使用luke,请投币100P一次,一次一小时</a></li>
+        <li><a href="#">欢迎使用gergoer,请投币50P一次,一次一小时</a></li>
+        <li><a href="#">欢迎使用biber,请白嫖,一次一小时</a></li>
     </ul>
 </div>
 <!-- 底部结束 -->
