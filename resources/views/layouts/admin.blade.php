@@ -26,7 +26,7 @@
         <li class="layui-nav-item">
             <a href="javascript:;">+新增</a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                <dd><a onclick="x_admin_show('资讯','http://www.baidu.com')"><i class="iconfont">&#xe6a2;</i>资讯</a></dd>
+                <dd><a onclick="x_admin_show('资讯','http://www.baidu.com')"><i class="iconfont">&#xe842;</i>资讯</a></dd>
                 <dd><a onclick="x_admin_show('图片','http://www.baidu.com')"><i class="iconfont">&#xe6a8;</i>图片</a></dd>
                 <dd><a onclick="x_admin_show('用户','http://www.baidu.com')"><i class="iconfont">&#xe6b8;</i>用户</a></dd>
             </dl>
@@ -36,8 +36,8 @@
         <li class="layui-nav-item">
             <a href="javascript:;">{{\Illuminate\Support\Facades\Auth::user()->name}}</a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                <dd><a onclick="x_admin_show('个人信息','http://www.baidu.com')">个人信息</a></dd>
-                <dd><a onclick="x_admin_show('切换帐号','http://www.baidu.com')">切换帐号</a></dd>
+                <dd><a onclick="x_admin_show('个人信息','http://www.baidu.com')" style="cursor: pointer">个人信息</a></dd>
+                <dd><a onclick="x_admin_show('切换帐号','http://www.baidu.com')" style="cursor: pointer">切换帐号</a></dd>
                 <dd><a href="./login.html">退出</a></dd>
             </dl>
         </li>
@@ -124,6 +124,7 @@
                             <cite>超级外链工具</cite>
                         </a>
                     </li >
+<<<<<<< HEAD
                     <li>
                         <a _href="member-del.html">
                             <i class="iconfont">&#xe6a7;</i>
@@ -161,6 +162,8 @@
 
                         </ul>
                     </li>
+=======
+>>>>>>> a632b063ccfe72c5dc470b9879161b1157feda08
                 </ul>
             </li>
             <li>
@@ -207,24 +210,6 @@
                         <a _href="admin-list.html">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>管理员列表</cite>
-                        </a>
-                    </li >
-                    <li>
-                        <a _href="admin-role.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>角色管理</cite>
-                        </a>
-                    </li >
-                    <li>
-                        <a _href="admin-cate.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>权限分类</cite>
-                        </a>
-                    </li >
-                    <li>
-                        <a _href="admin-rule.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>权限管理</cite>
                         </a>
                     </li >
                 </ul>
@@ -344,7 +329,12 @@
 <!-- 中部结束 -->
 <!-- 底部开始 -->
 <div class="footer">
-    <div class="copyright">Copyright ©2018 {{env('APP_NAME')}} All Rights Reserved</div>
+    <ul class="copyright">
+        <li><a href="#">欢迎使用winston,请投币500P一次,一次一小时</a></li>
+        <li><a href="#">欢迎使用luke,请投币100P一次,一次一小时</a></li>
+        <li><a href="#">欢迎使用gergoer,请投币50P一次,一次一小时</a></li>
+        <li><a href="#">欢迎使用biber,请白嫖,一次一小时</a></li>
+    </ul>
 </div>
 <!-- 底部结束 -->
 </body>
