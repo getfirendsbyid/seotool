@@ -15,8 +15,8 @@ class CreatePresTable extends Migration
     {
         Schema::create('pres', function (Blueprint $table) {
             $table->increments('id');
-            $table->string('name')->nullable()->common('域名浅前缀');
-            $table->integer('team')->nullable()->common('所属小队');
+            $table->string('name')->nullable()->common('域名前缀');
+            $table->integer('team')->nullable()->common('所属分组');
             $table->integer('status')->nullable()->common('前缀状态 0 未使用 1已使用');
             $table->timestamps();
         });

@@ -16,9 +16,9 @@ class CreateYumingsTable extends Migration
         Schema::create('yumings', function (Blueprint $table) {
             $table->increments('id');
             $table->string('name')->nullable()->common('域名');
-            $table->integer('team')->nullable()->common('小组');
+            $table->integer('team')->nullable()->common('分组');
             $table->integer('status')->nullable()->common('使用状态. 0未使用 1使用');
-            $table->integer('');
+            $table->integer('token')->nullable()->common('网站token');
             $table->timestamps();
         });
     }

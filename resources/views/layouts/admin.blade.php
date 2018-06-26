@@ -11,7 +11,7 @@
     <link rel="shortcut icon" href="/favicon.ico" type="image/x-icon" />
     <link rel="stylesheet" href="./css/font.css">
     <link rel="stylesheet" href="./css/xadmin.css">
-    <script type="text/javascript" src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <script type="text/javascript" src="./js/jquery.min.js"></script>
     <script src="./lib/layui/layui.js" charset="utf-8"></script>
     <script type="text/javascript" src="./js/xadmin.js"></script>
 </head>
@@ -26,7 +26,7 @@
         <li class="layui-nav-item">
             <a href="javascript:;">+新增</a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                <dd><a onclick="x_admin_show('资讯','http://www.baidu.com')"><i class="iconfont">&#xe6a2;</i>资讯</a></dd>
+                <dd><a onclick="x_admin_show('资讯','http://www.baidu.com')"><i class="iconfont">&#xe842;</i>资讯</a></dd>
                 <dd><a onclick="x_admin_show('图片','http://www.baidu.com')"><i class="iconfont">&#xe6a8;</i>图片</a></dd>
                 <dd><a onclick="x_admin_show('用户','http://www.baidu.com')"><i class="iconfont">&#xe6b8;</i>用户</a></dd>
             </dl>
@@ -36,8 +36,8 @@
         <li class="layui-nav-item">
             <a href="javascript:;">{{\Illuminate\Support\Facades\Auth::user()->name}}</a>
             <dl class="layui-nav-child"> <!-- 二级菜单 -->
-                <dd><a onclick="x_admin_show('个人信息','http://www.baidu.com')">个人信息</a></dd>
-                <dd><a onclick="x_admin_show('切换帐号','http://www.baidu.com')">切换帐号</a></dd>
+                <dd><a onclick="x_admin_show('个人信息','http://www.baidu.com')" style="cursor: pointer">个人信息</a></dd>
+                <dd><a onclick="x_admin_show('切换帐号','http://www.baidu.com')" style="cursor: pointer">切换帐号</a></dd>
                 <dd><a href="./login.html">退出</a></dd>
             </dl>
         </li>
@@ -61,22 +61,21 @@
             </li>
             <li>
                 <a href="javascript:;">
-                    <i class="iconfont">&#xe6b8;</i>
-                    <cite>外链工具</cite>
+                    <i class="iconfont">&#xe6fc;</i>
+                    <cite>域名管理</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="/linktool">
+                        <a _href="/yuming">
                             <i class="iconfont">&#xe6a7;</i>
-                            <cite>超级外链工具</cite>
+                            <cite>域名组</cite>
                         </a>
                     </li >
                     <li>
                         <a _href="member-del.html">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>会员删除</cite>
-
                         </a>
                     </li>
                     <li>
@@ -90,7 +89,6 @@
                                 <a _href="xxx.html">
                                     <i class="iconfont">&#xe6a7;</i>
                                     <cite>会员列表</cite>
-
                                 </a>
                             </li >
                             <li>
@@ -112,6 +110,22 @@
                     </li>
                 </ul>
             </li>
+
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont">&#xe6f7;</i>
+                    <cite>外链工具</cite>
+                    <i class="iconfont nav_right">&#xe697;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a _href="/linktool">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>超级外链工具</cite>
+                        </a>
+                    </li >
+                </ul>
+            </li>
             <li>
                 <a href="javascript:;">
                     <i class="iconfont">&#xe723;</i>
@@ -125,11 +139,29 @@
                             <cite>token推送</cite>
                         </a>
                     </li >
+                    <li>
+                        <a _href="/baidu/ping">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>ping提交</cite>
+                        </a>
+                    </li >
+                    <li>
+                        <a _href="/baidu/sitemap">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>sitemap提交</cite>
+                        </a>
+                    </li >
+                    <li>
+                        <a _href="/baidu/yuming">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>域名提交</cite>
+                        </a>
+                    </li >
                 </ul>
             </li>
             <li>
                 <a href="javascript:;">
-                    <i class="iconfont">&#xe726;</i>
+                    <i class="iconfont">&#xe6e1;</i>
                     <cite>神马工具</cite>
                     <i class="iconfont nav_right">&#xe697;</i>
                 </a>
@@ -138,24 +170,6 @@
                         <a _href="admin-list.html">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>管理员列表</cite>
-                        </a>
-                    </li >
-                    <li>
-                        <a _href="admin-role.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>角色管理</cite>
-                        </a>
-                    </li >
-                    <li>
-                        <a _href="admin-cate.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>权限分类</cite>
-                        </a>
-                    </li >
-                    <li>
-                        <a _href="admin-rule.html">
-                            <i class="iconfont">&#xe6a7;</i>
-                            <cite>权限管理</cite>
                         </a>
                     </li >
                 </ul>
@@ -216,6 +230,41 @@
                         </a>
                     </li>
                 </ul>
+
+            </li>
+            <li>
+                <a href="javascript:;">
+                    <i class="iconfont">&#xe70c;</i>
+                    <cite>系统生成</cite>
+                    <i class="iconfont nav_right">&#xe697;</i>
+                </a>
+                <ul class="sub-menu">
+                    <li>
+                        <a _href="/sc/ptej">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>普通二级域名</cite>
+                        </a>
+                    </li >
+                    <li>
+                        <a _href="/sc/pyej">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>拼音二级域名</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a _href="/sc/ptzml">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>普通子目录</cite>
+                        </a>
+                    </li>
+                    <li>
+                        <a _href="/sc/pyzml">
+                            <i class="iconfont">&#xe6a7;</i>
+                            <cite>拼音子目录</cite>
+                        </a>
+                    </li>
+                </ul>
+
             </li>
         </ul>
     </div>
@@ -240,18 +289,13 @@
 <!-- 中部结束 -->
 <!-- 底部开始 -->
 <div class="footer">
-    <div class="copyright">Copyright ©2018 {{env('APP_NAME')}} All Rights Reserved</div>
+    <ul class="copyright">
+        <li><a href="#">欢迎使用winston,请投币500P一次,一次一小时</a></li>
+        <li><a href="#">欢迎使用luke,请投币100P一次,一次一小时</a></li>
+        <li><a href="#">欢迎使用gergoer,请投币50P一次,一次一小时</a></li>
+        <li><a href="#">欢迎使用biber,请白嫖,一次一小时</a></li>
+    </ul>
 </div>
 <!-- 底部结束 -->
-<script>
-    //百度统计可去掉
-    var _hmt = _hmt || [];
-    (function() {
-        var hm = document.createElement("script");
-        hm.src = "https://hm.baidu.com/hm.js?b393d153aeb26b46e9431fabaf0f6190";
-        var s = document.getElementsByTagName("script")[0];
-        s.parentNode.insertBefore(hm, s);
-    })();
-</script>
 </body>
 </html>
