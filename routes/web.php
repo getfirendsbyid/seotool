@@ -24,6 +24,7 @@ Route::get('/admin','LinkController@index');
 Route::get('/linktool','LinkController@index');
 
 //百度tool
+Route::get('baidu', 'BaiduController@index');
 Route::get('baidu/pushtoken', 'BaiduController@pushtoken');
 Route::get('baidu/sitemap', 'BaiduController@pushtoken');
 Route::get('baidu/yuming', 'BaiduController@pushtoken');

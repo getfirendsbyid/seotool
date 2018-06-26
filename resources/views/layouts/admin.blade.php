@@ -142,7 +142,6 @@
                                 <a _href="xxx.html">
                                     <i class="iconfont">&#xe6a7;</i>
                                     <cite>会员列表</cite>
-
                                 </a>
                             </li >
                             <li>
@@ -172,7 +171,7 @@
                 </a>
                 <ul class="sub-menu">
                     <li>
-                        <a _href="/baidu/pushtoken">
+                        <a _href="/baidu">
                             <i class="iconfont">&#xe6a7;</i>
                             <cite>token推送</cite>
                         </a>

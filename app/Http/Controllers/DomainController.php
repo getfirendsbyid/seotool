@@ -19,6 +19,7 @@ class DomainController extends Controller
         return view('yuming.index',compact('group'));
     }
 
+
     public function list(Request $request)
     {
         $teamid = $request->input('teamid');

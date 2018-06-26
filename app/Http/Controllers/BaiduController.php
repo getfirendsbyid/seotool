@@ -2,29 +2,44 @@
 
 namespace App\Http\Controllers;
 
+use App\Group;
 use App\Nav;
 use App\Pre;
+use App\User;
 use App\Yuming;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Script\MultiProcessBase;
 
 class BaiduController extends Controller
 {
-
-    public function pushtoken()
+    public function index()
     {
-        $token = 'JNhSyUDGYC4ak7xW'; //我的token
-        $yuming = Yuming::where(['team'=>4])->get();
-        $pre = Pre::all();
-        $nav = Nav::all();
+        $userid = Auth::user()->id;
+        $group =  Group::where(['userid'=>$userid])->get();
+        return view('baidu.index',compact('group'));
+    }
+
+
+    public function pushtoken(Request $request)
+    {
+        set_time_limit(0);
+        $id =  $request->input('teamid');
+        $userid = Auth::user()->id;
+        $group = Group::where(['id'=>$id])->first();
+        $yuming = Yuming::where(['team'=>$id])->get();
+        $pre = Pre::where(['userid'=>$userid])->get();
+        $nav = Nav::where(['userid'=>$userid])->get();
+
         foreach ($yuming as $key=>$item){
-//            foreach ($pre as $key1=>$item1){
-                foreach ($nav as $key2=>$item2){
-                    for($i=0;$i<200;$i++){
-                        $url[$key][$key2][$i]='http://www.'.$item->name.'/'.$item2->name.'/z'.date('Ymd').rand(1000,9999).'.html';
+//            foreach ($pre as $key1=>$item1) {
+                foreach ($nav as $key2 => $item2) {
+                    for ($i = 0; $i < 2000; $i++) {
+                        $url[$key][$key2][$i] = 'http://www.' . $item->name . '/' . $item2->name . '/z' . date('Ymd') . str_random(8) . '.html';
                     }
-                    $posturl = 'http://data.zz.baidu.com/urls?site=www.'.$item->name.'&token='.$token;
+                    $posturl = 'http://data.zz.baidu.com/urls?site=www.' . $item->name . '&token=' . $group->token;
                     $ch = curl_init();
-                    $options =  array(
+                    $options = array(
                         CURLOPT_URL => $posturl,
                         CURLOPT_POST => true,
                         CURLOPT_RETURNTRANSFER => true,
@@ -33,20 +48,18 @@ class BaiduController extends Controller
                     );
                     curl_setopt_array($ch, $options);
                     $result = curl_exec($ch);
-                    echo '当前第'.($key+1).'条域名。前缀www。域名'.$item->name.'.栏目:'.$item2->name.'.'.count($url[$key][$key2]).'条url正在推送';
+                    echo '当前第' . ($key + 1) . '条域名。前缀www'.'。域名' . $item->name . '.栏目:' . $item2->name . '.' . count($url[$key][$key2]) . '条url正在推送';
 //                    for ($i=0;$i<count($url[$key][$key2]);$i++){
 //                        echo $url[$key][$key2][$i];
 //                        echo '<br>';
 //                    }
                     echo '<br>';
-                    echo '返回结果:'.$result;
+                    echo '返回结果:' . $result;
                     echo '<br>';
                     ob_flush();
                     flush();
                 }
-            echo '<br>'.'休息半小时接着推送';
-//            sleep(1800);
-
+//            }
         }
         dd('推送结束.欢迎使用George牌推送工具');
     }
