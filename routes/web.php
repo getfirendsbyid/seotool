@@ -14,14 +14,12 @@
 Auth::routes();
 
 Route::get('/', function () {
-    phpinfo();
-//   return redirect('login');
+   return redirect('login');
 });
 
 //系统工具
 Route::get('/admin/index','HomeController@welcome');
 Route::get('test','BaiduController@test');
-
 
 //外链工具
 Route::get('/admin','LinkController@index');
@@ -30,6 +28,7 @@ Route::get('/admin','LinkController@index');
 Route::get('/linktool','LinkController@index');
 
 //百度tool
+Route::get('baidu', 'BaiduController@index');
 Route::get('baidu/pushtoken', 'BaiduController@pushtoken');
 Route::get('baidu/sitemap', 'BaiduController@pushtoken');
 Route::get('baidu/yuming', 'BaiduController@pushtoken');

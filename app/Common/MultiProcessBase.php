@@ -105,6 +105,7 @@ class MultiProcessBase
      *
      * @return $this
      */
+
     public function scheduler(array $scheduler)
     {
         $this->scheduler = $scheduler;
